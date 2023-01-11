@@ -17,19 +17,19 @@ public class Function { // Literally just to make easy printing of many data typ
         print("}");
     }
     public void print(char[] str) {
-        System.out.print("{");
+        System.out.print("|");
         for(int i=0; i<str.length-1; i++) {
-            System.out.print(str[i] + ", ");
+            System.out.print(str[i] + "");
         }
         System.out.print(str[str.length-1]);
-        System.out.println("},");
+        System.out.println("|}");
     }
     public void print(char[][] arr) {
-        print("{");
+        print("-");
         for(int i=0; i<arr.length; i++) {
             print(arr[i]);
         }
-        print("}");
+        print("-");
     }
     public void print(int[] arr) {
         if(arr.length > 0) {
@@ -53,6 +53,24 @@ public class Function { // Literally just to make easy printing of many data typ
         print("{");
         for(int i=0; i<arr.length; i++) {
             arr[i].print();
+        }
+        print("},");
+    }
+    public void print(boolean bool) {
+        System.out.println(bool);
+    }
+    public void print(boolean[] arr) {
+        System.out.print("{");
+        for(int i=0; i<arr.length; i++) {
+            if(arr[i]) System.out.print("1");
+            else System.out.print("0");
+        }
+        System.out.println("}");
+    }
+    public void print(boolean[][] arr) {
+        print("{");
+        for(int i=0; i<arr.length; i++) {
+            print(arr[i]);
         }
         print("},");
     }
@@ -95,6 +113,14 @@ public class Function { // Literally just to make easy printing of many data typ
         for(int i=0; i<a.length; i++) {
             temp[arr.length][i] = a[i];
         }
+        return temp;
+    }
+    public String[] add(String[] arr, String a) {
+        String[] temp = new String[arr.length+1];
+        for(int i=0; i<arr.length; i++) {
+            temp[i] = arr[i];
+        }
+        temp[arr.length] = a;
         return temp;
     }
 

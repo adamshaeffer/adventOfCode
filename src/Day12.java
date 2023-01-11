@@ -90,7 +90,7 @@ public class Day12 {
             }
             y--;
         }
-        if(x > 116) {
+        if(x > 100) {
             x--;
             if(map[y][x] <= curr+1 && map[y][x] != '.') {
                 temp = move(x,y,e,map);
